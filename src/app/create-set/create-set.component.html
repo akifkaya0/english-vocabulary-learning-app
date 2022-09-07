@@ -1,0 +1,18 @@
+<mat-card>
+
+  <mat-card-header>
+    <mat-card-subtitle>Create a new study set</mat-card-subtitle>
+  </mat-card-header>
+
+  <mat-card-header>
+    <mat-form-field>
+      <mat-label>Set Name</mat-label>
+      <input matInput autocomplete="off" [(ngModel)]="setTitle">
+    </mat-form-field>
+  </mat-card-header>
+
+  <mat-card-actions>
+    <button mat-raised-button color="primary" (click)="createSet()">Create</button>
+  </mat-card-actions>
+
+</mat-card>
