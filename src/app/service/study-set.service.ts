@@ -15,7 +15,7 @@ export class StudySetService extends BaseServiceService {
     return this.getReq("/studySets");
   }
 
-  public getStudySetById(id: string ) {
+  public getStudySetById(id: string | null ) {
     return this.getReq(("/studySets/" + id));
   }
 

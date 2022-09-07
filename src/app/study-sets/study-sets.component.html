@@ -1,5 +1,5 @@
 <div class="cards">
-  <div class="card" *ngFor="let set of sets ; let i = index">
+  <div class="card" *ngFor="let set of sets">
     <a [routerLink]="'/set/' + set.id">
       <mat-card>
         <mat-card-header>
@@ -7,7 +7,7 @@
           <mat-card-subtitle>{{set?.words?.length}} kelime</mat-card-subtitle>
 
         </mat-card-header>
-        <mat-progress-bar class="example-margin" color="primary" mode="determinate" [value]="calculate(this.sets[i].words)"
+        <mat-progress-bar class="example-margin" color="primary" mode="determinate" [value]="calculate(set?.words)"
           [bufferValue]="75">
         </mat-progress-bar>
       </mat-card>
