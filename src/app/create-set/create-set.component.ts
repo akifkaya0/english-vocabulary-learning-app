@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { StudySetService } from '../service/study-set.service';
 import * as uuid from 'uuid';
 import { Router } from '@angular/router';
+import { Word } from '../entitiy/word';
 
 @Component({
   selector: 'app-create-set',
@@ -16,16 +17,24 @@ export class CreateSetComponent implements OnInit {
   }
 
   setTitle : string = "";
+  wordCount: number = 1;
 
-  createSet(){
+  @ViewChild('count') count: ElementRef | undefined;
+
+
+  createSet(wordArray : Word[]){
 
     this.service.addSet({
       "id" : uuid.v4().substring(0,5),
       "title" : this.setTitle,
       "testValue" : 0,
-      "words" : []
+      "words" : wordArray
     }).subscribe(res => this.router.navigateByUrl("/set/" + res.id));
 
+  }
+
+  countHandler(){
+    this.wordCount = this.count?.nativeElement.value;
   }
 
 }

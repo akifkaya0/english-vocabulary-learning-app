@@ -1,18 +1,26 @@
 <mat-card>
 
-  <mat-card-header>
-    <mat-card-subtitle>Create a new study set</mat-card-subtitle>
-  </mat-card-header>
+  <mat-card-subtitle>Create a new study set</mat-card-subtitle>
 
   <mat-card-header>
     <mat-form-field>
       <mat-label>Set Name</mat-label>
       <input matInput autocomplete="off" [(ngModel)]="setTitle">
     </mat-form-field>
-  </mat-card-header>
 
-  <mat-card-actions>
-    <button mat-raised-button color="primary" (click)="createSet()">Create</button>
-  </mat-card-actions>
+    <mat-form-field style="width: 100px; margin-left:30px;">
+      <mat-label>Word Count</mat-label>
+      <input matInput autocomplete="off" type="number" #count [ngModel]="wordCount">
+
+    </mat-form-field>
+    <button mat-mini-fab (click)="countHandler()">
+      <mat-icon>cached</mat-icon>
+    </button>
+  </mat-card-header>
+  <mat-card-subtitle>Add Words</mat-card-subtitle>
+
+  <mat-card-content>
+    <app-create-words [wordCount]="wordCount" (arrayOut)="createSet($event)"></app-create-words>
+  </mat-card-content>
 
 </mat-card>

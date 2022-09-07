@@ -1,0 +1,68 @@
+<mat-accordion>
+
+  <mat-expansion-panel *ngFor="let word of wordArray ; let i = index" (opened)="panelOpened(i)" (closed)="panelOpenState = false">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        {{word.english || ("Sample Word " + (i+1))}}
+      </mat-panel-title>
+      <mat-panel-description>
+        {{(word.turkish.first || "Örnek Kelime 1 ") + "~" + (word.turkish.second || " Örnek Kelime 2")}}
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+
+
+    <form [formGroup]="words">
+
+      <mat-form-field style="width: 15%;">
+        <mat-label>English</mat-label>
+        <input matInput autocomplete="off" formControlName="english">
+      </mat-form-field>
+
+      <mat-form-field style="width: 15%;">
+        <mat-label>Turkish - 1</mat-label>
+        <input matInput autocomplete="off" formControlName="turkhishFirst">
+      </mat-form-field>
+
+      <mat-form-field style="width: 15%;">
+        <mat-label>Turkish - 2</mat-label>
+        <input matInput autocomplete="off" formControlName="turkishSecond">
+      </mat-form-field>
+
+      <mat-form-field style="width: 40%;">
+        <mat-label>Description</mat-label>
+        <input matInput autocomplete="off" formControlName="description">
+      </mat-form-field>
+
+      <mat-form-field style="width: 40%;">
+        <mat-label>Sample Sentence - 1</mat-label>
+        <input matInput autocomplete="off" formControlName="sentenceFirstEnglish">
+      </mat-form-field>
+
+      <mat-form-field style="width: 40%;">
+        <mat-label>Description</mat-label>
+        <input matInput autocomplete="off" formControlName="sentenceFirstDescription">
+      </mat-form-field>
+
+      <mat-form-field style="width: 40%;">
+        <mat-label>Sample Sentence - 2</mat-label>
+        <input matInput autocomplete="off" formControlName="sentenceSecondEnglish">
+      </mat-form-field>
+
+      <mat-form-field style="width: 40%;">
+        <mat-label>Description</mat-label>
+        <input matInput autocomplete="off" formControlName="sentenceSecondDescription">
+      </mat-form-field>
+
+    </form>
+
+
+  </mat-expansion-panel>
+
+</mat-accordion>
+
+<div class="button">
+  <button mat-raised-button color="primary" (click)="outputArray()">Create</button>
+</div>
+
+
+
