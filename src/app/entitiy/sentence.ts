@@ -1,5 +1,4 @@
 export interface Sentence {
-  english: "",
-  turkish: "",
-  description: ""
+  english: string |null ,
+  description: string | null
 }

@@ -34,6 +34,8 @@ export class CreateWordsComponent implements OnInit, OnChanges {
     sentenceFirstDescription: new FormControl(""),
     sentenceSecondEnglish: new FormControl(""),
     sentenceSecondDescription: new FormControl(""),
+    sentenceThirdEnglish: new FormControl(""),
+    sentenceThirdDescription: new FormControl(""),
   })
 
   ngOnInit(): void {
@@ -70,6 +72,14 @@ export class CreateWordsComponent implements OnInit, OnChanges {
       if (this.wordNumber != undefined) this.wordArray[this.wordNumber].sentences[1].description  = res
     })
 
+    this.words.get('sentenceThirdEnglish')?.valueChanges.subscribe(res => {
+      if (this.wordNumber != undefined) this.wordArray[this.wordNumber].sentences[2].english  = res
+    })
+
+    this.words.get('sentenceThirdDescription')?.valueChanges.subscribe(res => {
+      if (this.wordNumber != undefined) this.wordArray[this.wordNumber].sentences[2].description  = res
+    })
+
   }
 
   ngOnChanges(changes: SimpleChanges): void {
@@ -89,6 +99,10 @@ export class CreateWordsComponent implements OnInit, OnChanges {
           },
           description: "",
           sentences: [
+            {
+              english: "",
+              description: ""
+            },
             {
               english: "",
               description: ""
@@ -132,7 +146,9 @@ export class CreateWordsComponent implements OnInit, OnChanges {
       sentenceFirstEnglish: this.wordArray[i].sentences[0].english,
       sentenceFirstDescription: this.wordArray[i].sentences[0].description,
       sentenceSecondEnglish: this.wordArray[i].sentences[1].english,
-      sentenceSecondDescription: this.wordArray[i].sentences[1].description
+      sentenceSecondDescription: this.wordArray[i].sentences[1].description,
+      sentenceThirdEnglish: this.wordArray[i].sentences[2].english,
+      sentenceThirdDescription: this.wordArray[i].sentences[2].description,
     });
   }
 

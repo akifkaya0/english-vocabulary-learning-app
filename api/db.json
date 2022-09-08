@@ -1,28 +1,141 @@
 {
   "studySets": [
     {
-      "id": "c9a35",
+      "id": "fe069",
       "title": "İsimler - 1",
       "testValue": 0,
-      "words": []
-    },
-    {
-      "id": "22040",
-      "title": "İsimler - 2",
-      "testValue": 0,
-      "words": []
-    },
-    {
-      "id": "8d31f",
-      "title": "İsimler - 3",
-      "testValue": 0,
-      "words": []
-    },
-    {
-      "id": "83772",
-      "title": "İsimler - 4",
-      "testValue": 0,
-      "words": []
+      "words": [
+        {
+          "id": "8c791",
+          "english": "time",
+          "turkish": {
+            "first": "zaman",
+            "second": "defa"
+          },
+          "description": "İsim (noun) olarak kullanıldığında zaman veya defa, kere, kez anlamına gelir.",
+          "sentences": [
+            {
+              "english": "What time is it?",
+              "description": "Saat kaç?"
+            },
+            {
+              "english": "It's time to get up.",
+              "description": "Uyanma vakti. (Burada it's time kalıbı tam vakti/zamanı anlamında kullanılır.)"
+            },
+            {
+              "english": "He’s been to France four times.",
+              "description": "Dört kez Fransa'ya gitti."
+            }
+          ],
+          "rating": 0,
+          "trueAnswer": 0,
+          "falseAnswer": 0
+        },
+        {
+          "id": "c60c1",
+          "english": "year",
+          "turkish": {
+            "first": "yıl",
+            "second": ""
+          },
+          "description": "",
+          "sentences": [
+            {
+              "english": "He joined the company a year ago.",
+              "description": "Şirketimize bir yıl önce katıldı."
+            },
+            {
+              "english": "Her son is six years old.",
+              "description": "Oğlu 6 yaşında. (...yaşında olmak)"
+            },
+            {
+              "english": "",
+              "description": ""
+            }
+          ],
+          "rating": 0,
+          "trueAnswer": 0,
+          "falseAnswer": 0
+        },
+        {
+          "id": "070de",
+          "english": "people",
+          "turkish": {
+            "first": "insanlar",
+            "second": "halk"
+          },
+          "description": "",
+          "sentences": [
+            {
+              "english": "Our company employs over 400 people.",
+              "description": "Şirketimizde 400'den fazla kişi istihdam edilmektedir. (Burada sayılabilir olan şey 1 den fazla olduğu için people da çoğul kelime olduğu için kullanılabilir.)"
+            },
+            {
+              "english": "People live much longer than they used to.",
+              "description": "İnsanlar eskisinden çok daha uzun yaşıyor."
+            },
+            {
+              "english": "The rebels have gained the support of the people.",
+              "description": "İsyancılar halkın desteğini kazandı. (the people kullanımı halk anlamına gelmektedir.)"
+            }
+          ],
+          "rating": 0,
+          "trueAnswer": 0,
+          "falseAnswer": 0
+        },
+        {
+          "id": "ddc17",
+          "english": "way",
+          "turkish": {
+            "first": "yol",
+            "second": ""
+          },
+          "description": "aynı zamanda cümle içinde usül, yöntem, tarz anlamında kullanılmaktadır.",
+          "sentences": [
+            {
+              "english": "I must find a way to help him.",
+              "description": "Ona yardım etmenin bir yolunu bulmalıyım."
+            },
+            {
+              "english": "We looked at various ways of solving the problem.",
+              "description": "Sorunu çözmenin çeşitli yollarını aradık."
+            },
+            {
+              "english": "It was the way that she told me that I didn't like.",
+              "description": "Bana sevmediğimi söyleme şekli buydu."
+            }
+          ],
+          "rating": 0,
+          "trueAnswer": 0,
+          "falseAnswer": 0
+        },
+        {
+          "id": "54004",
+          "english": "day",
+          "turkish": {
+            "first": "gün",
+            "second": ""
+          },
+          "description": "",
+          "sentences": [
+            {
+              "english": "I saw her the day before yesterday.",
+              "description": "Onu önceki gün gördüm."
+            },
+            {
+              "english": "She's had a very busy day at the office.",
+              "description": "Ofiste çok yoğun bir gün geçirdi."
+            },
+            {
+              "english": "We've been travelling all day.",
+              "description": "Bütün gün gezdik."
+            }
+          ],
+          "rating": 0,
+          "trueAnswer": 0,
+          "falseAnswer": 0
+        }
+      ]
     }
   ]
 }

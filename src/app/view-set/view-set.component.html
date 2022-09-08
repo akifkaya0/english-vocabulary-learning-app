@@ -1,0 +1,79 @@
+<div class="container">
+
+  <div style="display: flex; flex-direction: row;">
+    <mat-form-field *ngIf="setTitleEdit">
+      <input matInput type="text" autocomplete="off" [(ngModel)]="setTitleInput">
+      <button matSuffix mat-icon-button aria-label="Accept" (click)="setTitleHandle(set)">
+        <mat-icon>check</mat-icon>
+      </button>
+      <button matSuffix mat-icon-button aria-label="Cancel" (click)="setTitleEdit = false">
+        <mat-icon>close</mat-icon>
+      </button>
+    </mat-form-field>
+    <h1 *ngIf="!setTitleEdit"><i><b>{{set?.title}}</b></i></h1>
+    <button  *ngIf="!setTitleEdit" mat-icon-button (click)="setTitleEdit = true ; setTitleInput = set?.title;"style="margin: -5px 0px 0px 15px;"><mat-icon>edit</mat-icon></button>
+
+  </div>
+
+  <div style="display: flex; flex-direction: row; align-items: center; justify-content: space-between; margin-top: 20px;">
+
+
+    <div>
+      <button [disabled]="!set?.words?.length" [routerLink]="'/learn/' + set?.id" mat-raised-button
+        style="margin: 0px 0px 40px 10px;" color="primary">
+        <mat-icon>draw</mat-icon>
+        <span style="margin-left: 10px;">Öğren</span>
+      </button>
+      <button [routerLink]="'/addWord/' + set?.id" mat-raised-button style="margin: 0px 0px 40px 10px;" color="accent">
+        <mat-icon>add</mat-icon>
+        <span style="margin-left: 10px;">Kelime Ekle</span>
+      </button>
+      <button (click)="openDialog('set')" mat-raised-button style="margin: 0px 0px 40px 10px;" color="warn">
+        <mat-icon>delete</mat-icon>
+        <span style="margin-left: 10px;">Seti Sil</span>
+      </button>
+
+    </div>
+
+
+    <span style="margin-right: 500px;">
+      <h4><i>Kursu Tamamlama Oranı : %{{calculate(set?.words)}}</i></h4>
+      <h4><i>Tamamlanan Test Sayısı : {{set?.testValue}}</i></h4>
+    </span>
+  </div>
+
+  <h3><b>Bu setteki terimler ({{set?.words?.length}})</b></h3>
+  <div class="mat-cardim" *ngFor="let word of set?.words ; let i = index">
+    <mat-card style="width: 65%;">
+      <div style="width: 15%; padding: 5px;">
+        {{word.english}}
+      </div>
+      <div style="width: 15%; padding: 5px;">
+        {{word.turkish.first + (word.turkish.second ? " ~ " : "") + word.turkish.second}}
+      </div>
+      <div class="example-section">
+        <mat-progress-bar class="example-margin" color="primary" mode="determinate" [value]="word.rating"
+          [bufferValue]="75">
+        </mat-progress-bar>
+        <span>%{{word.rating}}</span>
+      </div>
+      <div>
+        <mat-icon style="color:#0f9d58 ;">check</mat-icon>
+        <span >{{word.trueAnswer}}</span>
+        <mat-icon color="warn">close</mat-icon>
+        <span>{{word.falseAnswer}}</span>
+      </div>
+    </mat-card>
+
+    <mat-card style="width:90px; padding: 2px; justify-content: center;">
+      <button mat-icon-button ><mat-icon>edit</mat-icon></button>
+      <button mat-icon-button (click)="openDialog('word')"><mat-icon>delete</mat-icon></button>
+    </mat-card>
+
+    <mat-card style="width:22%;" *ngIf="word.description !== ''">
+      <p><i><b>Not: </b></i>{{word.description}}</p>
+    </mat-card>
+
+  </div>
+
+</div>

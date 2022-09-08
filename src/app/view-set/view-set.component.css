@@ -1,0 +1,42 @@
+.container{
+  margin: 0px -30px;
+}
+
+
+mat-card{
+  display: flex;
+  flex-direction: row;
+  margin: 5px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px;
+}
+
+.mat-cardim{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+
+}
+
+.example-margin {
+  margin: 0 10px;
+}
+
+.example-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 30%;
+}
+
+.mat-mini-fab{
+  margin: 10px 0px 0px 20px;
+  width: 40px;
+  height: 40px;
+}
+
+.material-icons{
+  font-size: 20px;
+}
+

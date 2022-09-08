@@ -13,8 +13,14 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatButtonModule} from '@angular/material/button';
 import { CreateSetComponent } from './create-set/create-set.component';
 import {MatInputModule} from '@angular/material/input';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ViewSetComponent } from './view-set/view-set.component';
+import {MatIconModule} from '@angular/material/icon';
+import { CreateWordsComponent } from './create-words/create-words.component';
+import {MatExpansionModule} from '@angular/material/expansion';
+import {MatDialogModule} from '@angular/material/dialog';
+import { DeleteDialogComponent } from './view-set/delete-dialog/delete-dialog.component';
+import { ViewWordComponent } from './view-word/view-word.component';
 
 
 @NgModule({
@@ -23,7 +29,10 @@ import { ViewSetComponent } from './view-set/view-set.component';
     StudySetsComponent,
     ToolbarComponent,
     CreateSetComponent,
-    ViewSetComponent
+    ViewSetComponent,
+    CreateWordsComponent,
+    DeleteDialogComponent,
+    ViewWordComponent
   ],
   imports: [
     BrowserModule,
@@ -35,9 +44,16 @@ import { ViewSetComponent } from './view-set/view-set.component';
     MatToolbarModule,
     MatButtonModule,
     MatInputModule,
-    FormsModule
+    FormsModule,
+    MatIconModule,
+    MatExpansionModule,
+    ReactiveFormsModule,
+    MatDialogModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [
+    DeleteDialogComponent
+  ],
 })
 export class AppModule { }
