@@ -20,7 +20,7 @@ import { CreateWordsComponent } from './create-words/create-words.component';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatDialogModule} from '@angular/material/dialog';
 import { DeleteDialogComponent } from './view-set/delete-dialog/delete-dialog.component';
-import { ViewWordComponent } from './view-word/view-word.component';
+import { EditWordComponent } from './view-set/edit-word/edit-word.component';
 
 
 @NgModule({
@@ -32,7 +32,7 @@ import { ViewWordComponent } from './view-word/view-word.component';
     ViewSetComponent,
     CreateWordsComponent,
     DeleteDialogComponent,
-    ViewWordComponent
+    EditWordComponent
   ],
   imports: [
     BrowserModule,

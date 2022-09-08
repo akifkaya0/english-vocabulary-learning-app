@@ -5,8 +5,3 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: 'Roboto Condensed', sans-serif; }
-
-mat-form-field{
-  font-size: 16px !important;
-  font-weight: 600 !important;
-}

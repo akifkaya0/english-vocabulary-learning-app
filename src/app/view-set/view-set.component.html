@@ -43,7 +43,7 @@
   </div>
 
   <h3><b>Bu setteki terimler ({{set?.words?.length}})</b></h3>
-  <div class="mat-cardim" *ngFor="let word of set?.words ; let i = index">
+  <div class="mat-cardim" [id]="'wordCard' +i" *ngFor="let word of set?.words ; let i = index">
     <mat-card style="width: 65%;">
       <div style="width: 15%; padding: 5px;">
         {{word.english}}
@@ -66,7 +66,7 @@
     </mat-card>
 
     <mat-card style="width:90px; padding: 2px; justify-content: center;">
-      <button mat-icon-button ><mat-icon>edit</mat-icon></button>
+      <button mat-icon-button [routerLink]="'/' + set?.id + '/word/'+word.id"><mat-icon>edit</mat-icon></button>
       <button mat-icon-button (click)="openDialog('word')"><mat-icon>delete</mat-icon></button>
     </mat-card>
 

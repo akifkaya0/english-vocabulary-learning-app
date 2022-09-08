@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { ActivatedRoute, Router } from '@angular/router';
 import { StudySet } from '../entitiy/study-set';
@@ -14,7 +14,7 @@ import { DeleteDialogComponent } from './delete-dialog/delete-dialog.component';
 export class ViewSetComponent implements OnInit {
 
   constructor(public dialog: MatDialog, private service: StudySetService,
-    private route: ActivatedRoute,) { }
+    private route: ActivatedRoute) { }
 
   set: StudySet | undefined;
   setTitleInput: string | undefined = "";
@@ -32,8 +32,6 @@ export class ViewSetComponent implements OnInit {
       this.service.updateSet(set).subscribe()
     }
   }
-
-
 
   calculate(array: Word[] | undefined) {
     var sum = 0;
