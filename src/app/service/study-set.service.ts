@@ -27,5 +27,9 @@ export class StudySetService extends BaseServiceService {
     return this.postReq("/studySets" , newSet);
   }
 
+  public deleteSet(id: number | undefined){
+    return this.deleteReq("/studySets/" + id);
+  }
+
 
 }

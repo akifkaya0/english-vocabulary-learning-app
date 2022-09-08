@@ -1,0 +1,8 @@
+<h1 mat-dialog-title>Delete {{data.deletedType == "word" ? "word" : "set"}}</h1>
+<div mat-dialog-content>
+  Would you like to delete {{data.deletedType == "word" ? "word" : "set"}}?
+</div>
+<div mat-dialog-actions>
+  <button mat-raised-button mat-dialog-close>No</button>
+  <button mat-raised-button mat-dialog-close cdkFocusInitial (click)="deleteHandle()">Ok</button>
+</div>
