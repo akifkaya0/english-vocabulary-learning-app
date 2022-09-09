@@ -1,7 +1,7 @@
 import { Sentence } from "./sentence";
 
 export interface Word {
-  id: string,
+  id: string | null,
   english: string | null,
   turkish: {
     first: string | null

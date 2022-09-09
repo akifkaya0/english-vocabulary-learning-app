@@ -125,13 +125,7 @@ export class CreateWordsComponent implements OnInit, OnChanges {
 
       }
 
-
-
     }
-
-
-
-    console.log(this.wordArray)
 
   }
 
