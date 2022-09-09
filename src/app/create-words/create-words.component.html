@@ -1,3 +1,15 @@
+
+<div class="count">
+  <mat-form-field style="width: 200px; margin-left : 00px">
+    <mat-label>Word Count</mat-label>
+    <input matInput autocomplete="off" type="number" #count [ngModel]="wordCount">
+  </mat-form-field>
+
+  <button mat-mini-fab (click)="countHandler()">
+    <mat-icon>cached</mat-icon>
+  </button>
+</div>
+
 <mat-accordion>
 
   <mat-expansion-panel *ngFor="let word of wordArray ; let i = index" (opened)="panelOpened(i)" (closed)="panelOpenState = false">

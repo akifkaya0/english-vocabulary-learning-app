@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges, ViewChild } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Word } from '../entitiy/word';
 import { StudySetService } from '../service/study-set.service';
@@ -9,19 +9,64 @@ import * as uuid from 'uuid';
   templateUrl: './create-words.component.html',
   styleUrls: ['./create-words.component.css']
 })
-export class CreateWordsComponent implements OnInit, OnChanges {
+export class CreateWordsComponent implements OnInit {
 
-  @Input() wordCount: number|undefined;
   @Output() arrayOut = new EventEmitter();
+  @ViewChild('count') count: ElementRef | undefined;
 
-  outputArray(){
+  outputArray() {
     this.arrayOut.emit(this.wordArray)
   }
+  countHandler() {
 
-  constructor(private service: StudySetService) { }
+    if (this.count) this.wordCount = this.count.nativeElement.value;
+
+    const sayac = this.wordCount > this.wordArray.length ? this.wordCount - this.wordArray.length : this.wordArray.length - this.wordCount
+
+    for (let index = 0; index < sayac; index++) {
+
+      let newWordObject: Word = {
+        id: uuid.v4().substring(0, 5),
+        english: "",
+        turkish: {
+          first: "",
+          second: ""
+        },
+        description: "",
+        sentences: [
+          {
+            english: "",
+            description: ""
+          },
+          {
+            english: "",
+            description: ""
+          },
+          {
+            english: "",
+            description: ""
+          }
+        ],
+        rating: 0,
+        trueAnswer: 0,
+        falseAnswer: 0
+      };
+
+      if (this.wordCount > this.wordArray.length) this.wordArray.push(newWordObject);
+
+      if (this.wordCount < this.wordArray.length) this.wordArray.pop();
+
+    }
+
+
+
+
+  }
+
+  constructor() { }
 
   panelOpenState: boolean = true;
-
+  wordCount: number = 1;
   wordArray: Word[] = []
   wordNumber: number | undefined;
 
@@ -39,6 +84,8 @@ export class CreateWordsComponent implements OnInit, OnChanges {
   })
 
   ngOnInit(): void {
+
+    this.countHandler();
 
     this.words.get('english')?.valueChanges.subscribe(res => {
       if (this.wordNumber != undefined) this.wordArray[this.wordNumber].english = res
@@ -61,73 +108,27 @@ export class CreateWordsComponent implements OnInit, OnChanges {
     })
 
     this.words.get('sentenceFirstDescription')?.valueChanges.subscribe(res => {
-      if (this.wordNumber != undefined) this.wordArray[this.wordNumber].sentences[0].description  = res
+      if (this.wordNumber != undefined) this.wordArray[this.wordNumber].sentences[0].description = res
     })
 
     this.words.get('sentenceSecondEnglish')?.valueChanges.subscribe(res => {
-      if (this.wordNumber != undefined) this.wordArray[this.wordNumber].sentences[1].english  = res
+      if (this.wordNumber != undefined) this.wordArray[this.wordNumber].sentences[1].english = res
     })
 
     this.words.get('sentenceSecondDescription')?.valueChanges.subscribe(res => {
-      if (this.wordNumber != undefined) this.wordArray[this.wordNumber].sentences[1].description  = res
+      if (this.wordNumber != undefined) this.wordArray[this.wordNumber].sentences[1].description = res
     })
 
     this.words.get('sentenceThirdEnglish')?.valueChanges.subscribe(res => {
-      if (this.wordNumber != undefined) this.wordArray[this.wordNumber].sentences[2].english  = res
+      if (this.wordNumber != undefined) this.wordArray[this.wordNumber].sentences[2].english = res
     })
 
     this.words.get('sentenceThirdDescription')?.valueChanges.subscribe(res => {
-      if (this.wordNumber != undefined) this.wordArray[this.wordNumber].sentences[2].description  = res
+      if (this.wordNumber != undefined) this.wordArray[this.wordNumber].sentences[2].description = res
     })
 
   }
 
-  ngOnChanges(changes: SimpleChanges): void {
-
-    if(this.wordCount != undefined){
-
-      const sayac = this.wordCount > this.wordArray.length ? this.wordCount - this.wordArray.length : this.wordArray.length - this.wordCount
-
-      for (let index = 0; index < sayac; index++) {
-
-        let sampleWordObject: Word = {
-          id: uuid.v4().substring(0, 5),
-          english: "",
-          turkish: {
-            first: "",
-            second: ""
-          },
-          description: "",
-          sentences: [
-            {
-              english: "",
-              description: ""
-            },
-            {
-              english: "",
-              description: ""
-            },
-            {
-              english: "",
-              description: ""
-            }
-          ],
-          rating: 0,
-          trueAnswer: 0,
-          falseAnswer: 0
-        };
-
-        if (this.wordCount > this.wordArray.length) this.wordArray.push(sampleWordObject);
-
-        if (this.wordCount < this.wordArray.length) this.wordArray.pop();
-
-
-
-      }
-
-    }
-
-  }
 
   panelOpened(i: number) {
     this.panelOpenState = true;
@@ -144,8 +145,7 @@ export class CreateWordsComponent implements OnInit, OnChanges {
       sentenceThirdEnglish: this.wordArray[i].sentences[2].english,
       sentenceThirdDescription: this.wordArray[i].sentences[2].description,
     });
+
   }
-
-
 
 }

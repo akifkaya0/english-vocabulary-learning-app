@@ -11,11 +11,15 @@
       </button>
     </mat-form-field>
     <h1 *ngIf="!setTitleEdit"><i><b>{{set?.title}}</b></i></h1>
-    <button  *ngIf="!setTitleEdit" mat-icon-button (click)="setTitleEdit = true ; setTitleInput = set?.title;"style="margin: -5px 0px 0px 15px;"><mat-icon>edit</mat-icon></button>
+    <button *ngIf="!setTitleEdit" mat-icon-button (click)="setTitleEdit = true ; setTitleInput = set?.title;"
+      style="margin: -5px 0px 0px 15px;">
+      <mat-icon>edit</mat-icon>
+    </button>
 
   </div>
 
-  <div style="display: flex; flex-direction: row; align-items: center; justify-content: space-between; margin-top: 20px;">
+  <div
+    style="display: flex; flex-direction: row; align-items: center; justify-content: space-between; margin-top: 20px;">
 
 
     <div>
@@ -24,7 +28,8 @@
         <mat-icon>draw</mat-icon>
         <span style="margin-left: 10px;">Öğren</span>
       </button>
-      <button [routerLink]="'/addWord/' + set?.id" mat-raised-button style="margin: 0px 0px 40px 10px;" color="accent">
+      <button [routerLink]="'/'+set?.id + '/addWord/'" mat-raised-button style="margin: 0px 0px 40px 10px;"
+        color="accent">
         <mat-icon>add</mat-icon>
         <span style="margin-left: 10px;">Kelime Ekle</span>
       </button>
@@ -59,15 +64,19 @@
       </div>
       <div>
         <mat-icon style="color:#0f9d58 ;">check</mat-icon>
-        <span >{{word.trueAnswer}}</span>
+        <span>{{word.trueAnswer}}</span>
         <mat-icon color="warn">close</mat-icon>
         <span>{{word.falseAnswer}}</span>
       </div>
     </mat-card>
 
     <mat-card style="width:90px; padding: 2px; justify-content: center;">
-      <button mat-icon-button [routerLink]="'/' + set?.id + '/word/'+word.id"><mat-icon>edit</mat-icon></button>
-      <button mat-icon-button (click)="openDialog('word')"><mat-icon>delete</mat-icon></button>
+      <button mat-icon-button [routerLink]="'/' + set?.id + '/word/'+word.id">
+        <mat-icon>edit</mat-icon>
+      </button>
+      <button mat-icon-button (click)="openDialog('word')">
+        <mat-icon>delete</mat-icon>
+      </button>
     </mat-card>
 
     <mat-card style="width:22%;" *ngIf="word.description !== ''">

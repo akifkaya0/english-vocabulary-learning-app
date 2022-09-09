@@ -14,5 +14,6 @@ button{
 
 mat-toolbar{
   background-color: white;
-
+  position: fixed;
+  z-index:10;
 }

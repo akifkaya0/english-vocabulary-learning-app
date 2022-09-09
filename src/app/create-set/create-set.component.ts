@@ -17,10 +17,6 @@ export class CreateSetComponent implements OnInit {
   }
 
   setTitle : string = "";
-  wordCount: number = 1;
-
-  @ViewChild('count') count: ElementRef | undefined;
-
 
   createSet(wordArray : Word[]){
 
@@ -33,8 +29,6 @@ export class CreateSetComponent implements OnInit {
 
   }
 
-  countHandler(){
-    this.wordCount = this.count?.nativeElement.value;
-  }
+
 
 }

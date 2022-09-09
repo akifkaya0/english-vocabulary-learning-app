@@ -21,6 +21,8 @@ import {MatExpansionModule} from '@angular/material/expansion';
 import {MatDialogModule} from '@angular/material/dialog';
 import { DeleteDialogComponent } from './view-set/delete-dialog/delete-dialog.component';
 import { EditWordComponent } from './view-set/edit-word/edit-word.component';
+import { AddWordComponent } from './view-set/add-word/add-word.component';
+import {MatTabsModule} from '@angular/material/tabs';
 
 
 @NgModule({
@@ -32,7 +34,8 @@ import { EditWordComponent } from './view-set/edit-word/edit-word.component';
     ViewSetComponent,
     CreateWordsComponent,
     DeleteDialogComponent,
-    EditWordComponent
+    EditWordComponent,
+    AddWordComponent
   ],
   imports: [
     BrowserModule,
@@ -48,7 +51,8 @@ import { EditWordComponent } from './view-set/edit-word/edit-word.component';
     MatIconModule,
     MatExpansionModule,
     ReactiveFormsModule,
-    MatDialogModule
+    MatDialogModule,
+    MatTabsModule
   ],
   providers: [],
   bootstrap: [AppComponent],

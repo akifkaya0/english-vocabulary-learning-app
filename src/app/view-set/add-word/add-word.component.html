@@ -1,0 +1,29 @@
+<mat-card>
+
+  <mat-tab-group animationDuration="300ms">
+
+    <mat-tab label="Detaylı" >
+      <div>
+        <app-create-words></app-create-words>
+      </div>
+    </mat-tab>
+
+
+    <mat-tab label="İngilizce - Türkçe">
+      <div>
+        <mat-card-subtitle>Kelime Formatı : (ingilizce - türkçe 1 , türkçe 2)</mat-card-subtitle>
+        <form>
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Words</mat-label>
+            <textarea style="min-height: 300px;" matInput [(ngModel)]="text" name="text"
+              placeholder="Ex. It makes me feel..."></textarea>
+          </mat-form-field>
+          <button style="width: 150px;" (click)="parseWords()" color="primary" mat-raised-button>
+            Onayla
+          </button>
+        </form>
+      </div>
+    </mat-tab>
+  </mat-tab-group>
+
+</mat-card>

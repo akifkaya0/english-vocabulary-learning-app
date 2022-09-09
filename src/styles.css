@@ -3,5 +3,5 @@
   font-family: 'Roboto Condensed', sans-serif;
 }
 
-html, body { height: 100%; }
+html, body { height: 100%;   background-color: #f6f7fb; }
 body { margin: 0; font-family: 'Roboto Condensed', sans-serif; }

@@ -2,11 +2,22 @@ mat-form-field{
   margin: 20px;
 }
 
-
+.count{
+  display: flex;
+}
 
 .button{
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
   padding: 20px;
 }
 
+.mat-mini-fab{
+  margin: 30px 0px 0px 0px;
+  width: 30px;
+  height: 30px;
+}
+
+.material-icons{
+  font-size: 15px;
+}
