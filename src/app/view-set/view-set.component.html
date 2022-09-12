@@ -75,17 +75,9 @@
         </div>
 
         <div class="card-back">
-          <div style="width: 100%; padding: 5px; display: flex;">
-            <div style="margin-left: 7.5%; width: 40%;">{{word.sentences[0].english}}</div>
-            <div style="width: 50%;">{{word.sentences[0].description}}</div>
-          </div>
-          <div style="width: 100%; padding: 5px; display: flex;">
-            <div style="margin-left: 7.5%; width: 40%;">{{word.sentences[1].english}}</div>
-            <div style="width: 50%;">{{word.sentences[1].description}}</div>
-          </div>
-          <div style="width: 100%; padding: 5px; display: flex;">
-            <div style="margin-left: 7.5%; width: 40%;">{{word.sentences[2].english}}</div>
-            <div style="width: 50%;">{{word.sentences[2].description}}</div>
+          <div *ngFor="let sentence of word.sentences; let j = index" style="width: 100%; padding: 5px; display: flex;">
+            <div style="margin-left: 7.5%; width: 40%;">{{word.sentences[j].english}}</div>
+            <div style="width: 50%;">{{word.sentences[j].description}}</div>
           </div>
         </div>
 
