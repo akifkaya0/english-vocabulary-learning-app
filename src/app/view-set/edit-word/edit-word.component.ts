@@ -34,7 +34,7 @@ export class EditWordComponent implements OnInit {
   wordHistoryCount: number = 0;
 
 
-  constructor(private route: ActivatedRoute, private service: StudySetService,private router : Router) {
+  constructor(private route: ActivatedRoute, private service: StudySetService, private router: Router) {
 
   }
 
@@ -54,21 +54,15 @@ export class EditWordComponent implements OnInit {
 
     this.word.valueChanges.subscribe(res => {
 
-      if (++this.wordHistoryCount > 4) {
+      if (++this.wordHistoryCount >= 4) {
 
-        this.wordHistory.splice(this.wordHistoryIndex + 1, this.wordHistory.length - this.wordHistoryIndex)
+        const wordObj = Object.assign({
+          english: "", turkhishFirst: "", turkishSecond: "", description: "", sentenceFirstEnglish: "",
+          sentenceFirstDescription: "", sentenceSecondEnglish: "", sentenceSecondDescription: "",
+          sentenceThirdEnglish: "", sentenceThirdDescription: ""
+        }, res)
 
-        this.wordHistory.push(this.getWordObj(
-
-          Object.assign({
-            english: "", turkhishFirst: "", turkishSecond: "", description: "", sentenceFirstEnglish: "",
-            sentenceFirstDescription: "", sentenceSecondEnglish: "", sentenceSecondDescription: "",
-            sentenceThirdEnglish: "", sentenceThirdDescription: ""
-          }, res)
-
-        ))
-        this.wordHistoryCount = 0;
-        this.wordHistoryIndex++;
+        this.pushWordHistory(this.getWordObj(wordObj))
         this.changeFormValue()
 
       }
@@ -123,23 +117,35 @@ export class EditWordComponent implements OnInit {
 
   undoRedoHandler(value: number) {
 
+    if (value === -1 && this.wordHistoryCount < 4 && this.wordHistoryCount > 0)
+      this.pushWordHistory(this.getWordObj(this.word.getRawValue()))
+
+
     this.wordHistoryIndex = this.wordHistoryIndex + value;
     this.changeFormValue();
-    this.wordHistoryCount--;
+
+  }
+
+  pushWordHistory(word: Word) {
+    this.wordHistory.splice(this.wordHistoryIndex + 1, this.wordHistory.length - this.wordHistoryIndex)
+    this.wordHistory.push(word);
+    this.wordHistoryCount = 0;
+    this.wordHistoryIndex++;
 
   }
 
   changeFormValue() {
-
+    this.wordHistoryCount--;
     this.word.setValue(this.getWordFormObj(this.wordHistory[this.wordHistoryIndex]));
 
   }
+
 
   submitWord() {
 
     if (this.set && this.wordObj) {
       this.set.words[this.set.words.indexOf(this.wordObj)] = this.getWordObj(this.word.getRawValue())
-      this.service.updateSet(this.set).subscribe((res)=>this.router.navigateByUrl('/set/' + res.id))
+      this.service.updateSet(this.set).subscribe((res) => this.router.navigateByUrl('/set/' + res.id))
     }
   }
 
