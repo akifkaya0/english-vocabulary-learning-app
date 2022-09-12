@@ -48,29 +48,52 @@
   </div>
 
   <h3><b>Bu setteki terimler ({{set?.words?.length}})</b></h3>
-  <div class="mat-cardim" [id]="'wordCard' +i" *ngFor="let word of set?.words ; let i = index">
-    <mat-card style="width: 65%;">
-      <div style="width: 15%; padding: 5px;">
-        {{word.english}}
-      </div>
-      <div style="width: 15%; padding: 5px;">
-        {{word.turkish.first + (word.turkish.second ? " ~ " : "") + word.turkish.second}}
-      </div>
-      <div class="example-section">
-        <mat-progress-bar class="example-margin" color="primary" mode="determinate" [value]="word.rating"
-          [bufferValue]="75">
-        </mat-progress-bar>
-        <span>%{{word.rating}}</span>
-      </div>
-      <div>
-        <mat-icon style="color:#0f9d58 ;">check</mat-icon>
-        <span>{{word.trueAnswer}}</span>
-        <mat-icon color="warn">close</mat-icon>
-        <span>{{word.falseAnswer}}</span>
-      </div>
-    </mat-card>
+  <div class="mat-cardim" [ngClass]="{'height200' : cardHover[i] , 'height80': cardHover[i] === false}" [id]="'wordCard' +i" *ngFor="let word of set?.words ; let i = index">
 
-    <mat-card style="width:90px; padding: 2px; justify-content: center;">
+
+    <div class="flip-card" (mouseleave)="cardHover[i] = false" (mouseenter)="cardHover[i] = true">
+      <mat-card class="card-body">
+        <div class="card-front">
+          <div style="width: 15%; padding: 15px;">
+            {{word.english}}
+          </div>
+          <div style="width: 15%; padding: 15px;">
+            {{word.turkish.first + (word.turkish.second ? " ~ " : "") + word.turkish.second}}
+          </div>
+          <div class="example-section">
+            <mat-progress-bar class="example-margin" color="primary" mode="determinate" [value]="word.rating"
+              [bufferValue]="75">
+            </mat-progress-bar>
+            <span>%{{word.rating}}</span>
+          </div>
+          <div style="padding: 15px;">
+            <mat-icon style="color:#0f9d58 ;">check</mat-icon>
+            <span>{{word.trueAnswer}}</span>
+            <mat-icon color="warn">close</mat-icon>
+            <span>{{word.falseAnswer}}</span>
+          </div>
+        </div>
+
+        <div class="card-back">
+          <div style="width: 100%; padding: 5px; display: flex;">
+            <div style="margin-left: 7.5%; width: 40%;">{{word.sentences[0].english}}</div>
+            <div style="width: 50%;">{{word.sentences[0].description}}</div>
+          </div>
+          <div style="width: 100%; padding: 5px; display: flex;">
+            <div style="margin-left: 7.5%; width: 40%;">{{word.sentences[1].english}}</div>
+            <div style="width: 50%;">{{word.sentences[1].description}}</div>
+          </div>
+          <div style="width: 100%; padding: 5px; display: flex;">
+            <div style="margin-left: 7.5%; width: 40%;">{{word.sentences[2].english}}</div>
+            <div style="width: 50%;">{{word.sentences[2].description}}</div>
+          </div>
+        </div>
+
+      </mat-card>
+    </div>
+
+
+    <mat-card class="utils-card">
       <button mat-icon-button [routerLink]="'/' + set?.id + '/word/'+word.id">
         <mat-icon>edit</mat-icon>
       </button>
@@ -79,7 +102,7 @@
       </button>
     </mat-card>
 
-    <mat-card style="width:22%;" *ngIf="word.description !== ''">
+    <mat-card class="description-card" *ngIf="word.description !== ''">
       <p><i><b>Not: </b></i>{{word.description}}</p>
     </mat-card>
 

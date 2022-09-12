@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { ActivatedRoute, Router } from '@angular/router';
 import { StudySet } from '../entitiy/study-set';
@@ -19,6 +19,8 @@ export class ViewSetComponent implements OnInit {
   set: StudySet | undefined;
   setTitleInput: string | undefined = "";
   setTitleEdit: boolean = false;
+
+  cardHover : boolean[] = [];
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => this.service.getStudySetById(params.get('setId')).subscribe(res => this.set = res));
@@ -56,5 +58,6 @@ export class ViewSetComponent implements OnInit {
       },
     });
   }
+
 
 }
