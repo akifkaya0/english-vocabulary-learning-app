@@ -1,0 +1,49 @@
+<div class="bg"></div>
+
+
+<div class="container">
+
+  <mat-card class="kart">
+
+    <mat-card-header>
+      <mat-card-subtitle>Soru {{questionNumber}} / 30</mat-card-subtitle>
+
+      <mat-card-subtitle>Tanım</mat-card-subtitle>
+      <mat-card-title>{{questionWord || "Hata!! - Kelime Yok"}}</mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content style="margin-top: 100px;">
+
+      <div *ngIf="questionType == 'test'" >
+
+        <mat-card-subtitle style="margin-left: 15px;"><b>Doğru Terimi Seç</b></mat-card-subtitle>
+        <button style="padding: 3px;" (click)="verfiyAnswer(answer)" mat-raised-button
+          *ngFor="let answer of answerWords">
+          {{answer}}
+        </button>
+
+      </div>
+
+
+      <div *ngIf="questionType === 'gap-filling'">
+        <form>
+          <mat-form-field>
+            <mat-label><b>Cevabınız</b></mat-label>
+            <input matInput type="text" [(ngModel)]="gapFillingText" name="first">
+          </mat-form-field>
+          <button style="width: 150px;" (click)="verfiyAnswer()" color="primary" mat-raised-button>
+            Cevapla
+          </button>
+
+        </form>
+
+      </div>
+
+    </mat-card-content>
+
+  </mat-card>
+
+
+
+
+</div>

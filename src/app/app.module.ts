@@ -24,6 +24,7 @@ import { EditWordComponent } from './view-set/edit-word/edit-word.component';
 import { AddWordComponent } from './view-set/add-word/add-word.component';
 import {MatTabsModule} from '@angular/material/tabs';
 import { MouseEnterDtDirective } from './directives/mouse-enter-dt.directive';
+import { LearnComponent } from './learn/learn.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { MouseEnterDtDirective } from './directives/mouse-enter-dt.directive';
     DeleteDialogComponent,
     EditWordComponent,
     AddWordComponent,
-    MouseEnterDtDirective
+    MouseEnterDtDirective,
+    LearnComponent
   ],
   imports: [
     BrowserModule,

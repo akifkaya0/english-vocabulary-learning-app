@@ -1,0 +1,61 @@
+.bg{
+  background-image: url("../../assets/learn-background.jpg");
+  height: 100vh;
+  margin: -6vw;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  position: relative;
+}
+
+.container{
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+}
+
+
+button{
+  width:47%;
+  margin: 10px;
+}
+
+mat-form-field{
+  margin: 15px;
+  width: 70%;
+}
+
+
+.kart{
+  -webkit-animation: fade-in-bottom 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+	        animation: fade-in-bottom 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+
+@-webkit-keyframes fade-in-bottom {
+  0% {
+    -webkit-transform: translateY(50px);
+            transform: translateY(50px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes fade-in-bottom {
+  0% {
+    -webkit-transform: translateY(50px);
+            transform: translateY(50px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+
+
