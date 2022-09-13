@@ -48,10 +48,10 @@
   </div>
 
   <h3><b>Bu setteki terimler ({{set?.words?.length}})</b></h3>
-  <div class="mat-cardim" [ngClass]="{'height200' : cardHover[i] , 'height80': cardHover[i] === false}" [id]="'wordCard' +i" *ngFor="let word of set?.words ; let i = index">
+  <div class="mat-cardim" [id]="'wordCard' +i" *ngFor="let word of set?.words ; let i = index">
 
 
-    <div class="flip-card" (mouseleave)="cardHover[i] = false" (mouseenter)="cardHover[i] = true">
+    <div class="flip-card" click appMouseEnterDt>
       <mat-card class="card-body">
         <div class="card-front">
           <div style="width: 15%; padding: 15px;">
