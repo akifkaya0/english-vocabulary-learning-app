@@ -1,13 +1,72 @@
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined");
+
 .cards{
   display: flex;
   flex-wrap: wrap;
+  width: 75%;
+  padding: 10px;
 }
 
 .card{
-  width: 23.5%;
+  width: 30%;
   margin: 10px;
 }
 
 a{
   text-decoration: none;
+}
+
+.container{
+  display: flex;
+  flex-direction: column;
+}
+
+.daily-task{
+  width: 30%;
+  padding :10px;
+}
+
+.daily-task mat-card{
+  margin-top: 10px;
+}
+.daily-task-header{
+  display: flex;
+  align-items: center;
+}
+
+.daily-task-header mat-card-title{
+  margin: 0px 0px 0px 10px;
+  font-size: 20px;
+}
+
+.material-icons-outlined{
+  font-size: 40px;
+  overflow: initial;
+}
+
+mat-icon{
+  width: 40px;
+  height: 40px;
+}
+
+.calendar{
+  padding: 0px;
+}
+
+.weekly{}
+
+.weekly-row{
+  display: flex;
+  align-items: center;
+  border: solid 1px ;
+  margin: 10px 0px;
+}
+
+.weekly-rate{
+  width: 40px;
+  height: 40px;
+  background-color: aqua;
+}
+.chart{
+  width: 50%;
 }

@@ -25,6 +25,7 @@ import { AddWordComponent } from './view-set/add-word/add-word.component';
 import {MatTabsModule} from '@angular/material/tabs';
 import { MouseEnterDtDirective } from './directives/mouse-enter-dt.directive';
 import { LearnComponent } from './learn/learn.component';
+import { CalendarComponent } from './study-sets/calendar/calendar.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { LearnComponent } from './learn/learn.component';
     EditWordComponent,
     AddWordComponent,
     MouseEnterDtDirective,
-    LearnComponent
+    LearnComponent,
+    CalendarComponent
   ],
   imports: [
     BrowserModule,
@@ -55,7 +57,7 @@ import { LearnComponent } from './learn/learn.component';
     MatExpansionModule,
     ReactiveFormsModule,
     MatDialogModule,
-    MatTabsModule
+    MatTabsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
