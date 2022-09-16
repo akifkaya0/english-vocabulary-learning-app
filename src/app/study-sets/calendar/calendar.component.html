@@ -1,0 +1,43 @@
+<div class="calendar">
+  <form [formGroup]="selectedMonth">
+    <div class="calendar__opts">
+
+
+      <select name="calendar__month" id="calendar__month" formControlName="month">
+        <option *ngFor="let month of monthNames ; let i = index" [value]="i">{{month}}</option>
+      </select>
+
+
+      <select name="calendar__year" id="calendar__year">
+        <option selected>2022</option>
+      </select>
+
+    </div>
+  </form>
+
+  <div class="calendar__body">
+    <div class="calendar__days">
+      <div>M</div>
+      <div>T</div>
+      <div>W</div>
+      <div>T</div>
+      <div>F</div>
+      <div>S</div>
+      <div>S</div>
+    </div>
+
+    <div class="calendar__dates">
+      <div class="calendar__date calendar__date--grey"><span>27</span></div>
+      <div class="calendar__date calendar__date--grey"><span>28</span></div>
+      <div class="calendar__date calendar__date--grey"><span>29</span></div>
+      <div class="calendar__date calendar__date--grey"><span>30</span></div>
+
+      <div class="calendar__date"
+        [ngClass]="{'calendar__date--green' : isTasksDone(day)=='green', 'calendar__date--yellow' :  isTasksDone(day)=='yellow' ,'calendar__date--range-start' : day.getDate() == now.getDate() && day.getMonth() == now.getMonth()}"
+        *ngFor="let day of month">
+        <span>{{day.getDate()}}</span>
+      </div>
+
+    </div>
+  </div>
+</div>
