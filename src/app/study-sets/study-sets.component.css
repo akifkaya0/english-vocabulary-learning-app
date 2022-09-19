@@ -3,15 +3,39 @@
 .cards{
   display: flex;
   flex-wrap: wrap;
-  width: 75%;
+  width: 70%;
   padding: 10px;
 }
 
+h2{
+  font: 600 20px/32px 'Roboto Condensed', sans-serif;
+}
+
+.filter button{
+  min-width: 36px;
+  padding: 0px;
+  border-radius: 10px;
+}
+
+
+.filter mat-icon{
+  height: 30px;
+}
+
 .card{
-  width: 30%;
+  width: 100%;
   margin: 10px;
 }
 
+.card mat-card-title{
+  font-size: 17px;
+  margin-left: -10px;
+}
+
+.card mat-card-subtitle{
+  font-size: 13px;
+  margin-left: -10px;
+}
 a{
   text-decoration: none;
 }
@@ -36,7 +60,7 @@ a{
 
 .daily-task-header mat-card-title{
   margin: 0px 0px 0px 10px;
-  font-size: 20px;
+  font-size: 16px;
 }
 
 .material-icons-outlined{
@@ -53,7 +77,7 @@ mat-icon{
   padding: 0px;
 }
 
-.weekly{}
+
 
 .weekly-row{
   display: flex;
@@ -69,4 +93,38 @@ mat-icon{
 }
 .chart{
   width: 50%;
+}
+
+
+
+
+
+::ng-deep .mat-form-field-flex > .mat-form-field-infix { padding: 0.4em 0px !important;}
+::ng-deep .mat-form-field-label-wrapper { top: -1.3em; }
+
+::ng-deep .mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label {
+    transform: translateY(-1.1em) scale(.75);
+    width: 133.33333%;
+}
+
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-prefix, ::ng-deep.mat-form-field-appearance-outline .mat-form-field-suffix{
+  top: 0em !important;
+}
+
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline-end{
+  border-radius: 0 20px 20px 0 !important;
+}
+
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline-start{
+  border-radius: 20px 0 0 20px !important;
+}
+
+::ng-deep .mat-form-field-outline{
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+  background-color: white;
+  border-radius : 20px;
+}
+
+#search-input{
+  margin-bottom: 5px;
 }

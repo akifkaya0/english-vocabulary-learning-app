@@ -1,48 +1,64 @@
 <div class="container">
 
-  <div style="display: flex;">
-    <div class="cards">
-      <div class="card" *ngFor="let set of sets">
-        <a [routerLink]="'/set/' + set.id">
-          <mat-card>
-            <mat-card-header>
-              <mat-card-title>{{set.title}}</mat-card-title>
-              <mat-card-subtitle>{{set?.words?.length}} kelime</mat-card-subtitle>
+  <h2>Study Sets</h2>
 
-            </mat-card-header>
-            <mat-progress-bar class="example-margin" color="primary" mode="determinate" [value]="calculate(set?.words)"
-              [bufferValue]="75">
-            </mat-progress-bar>
-          </mat-card>
-        </a>
-      </div>
+  <div style="display: flex; flex-direction: column;">
+
+    <div class="filter">
+      <mat-form-field appearance="outline">
+        <mat-icon matPrefix>search</mat-icon>
+        <mat-label>Search</mat-label>
+        <input type="search" matInput id="search-input">
+        <button matSuffix mat-button>
+          <mat-icon>east</mat-icon>
+        </button>
+      </mat-form-field>
+
     </div>
+    <div style="display: flex;">
+      <div class="cards">
+        <div class="card" *ngFor="let set of sets">
+          <a [routerLink]="'/set/' + set.id">
+            <mat-card>
+              <mat-card-header>
+                <mat-card-title>{{set.title}}</mat-card-title>
+                <mat-card-subtitle>{{set?.words?.length}} kelime</mat-card-subtitle>
 
-    <div class="daily-task">
-      <mat-card class="daily-task-header">
-        <mat-icon *ngIf="" class="material-icons-outlined" color="accent">pending</mat-icon>
-        <mat-card-subtitle *ngIf="">0/1 Günlük Görev</mat-card-subtitle>
-        <mat-icon class="material-icons-outlined" style="color:#0f9d58 ;">check</mat-icon>
-        <mat-card-title>Günlük Görev Tamamlandı</mat-card-title>
-
-      </mat-card>
-
-      <mat-card class="calendar">
-        <app-calendar></app-calendar>
-      </mat-card>
-
-      <mat-card class="weekly">
-        <div class="weekly-row">
-          <mat-card-subtitle>Pzt.</mat-card-subtitle>
-          <div class="weekly-rate"></div>
+              </mat-card-header>
+              <mat-progress-bar class="example-margin" color="primary" mode="determinate"
+                [value]="calculate(set?.words)" [bufferValue]="75">
+              </mat-progress-bar>
+            </mat-card>
+          </a>
         </div>
-        <div class="weekly-row">
-          <mat-card-subtitle>Pzt.</mat-card-subtitle>
-          <div class="weekly-rate"></div>
-        </div>
+      </div>
 
-      </mat-card>
+      <div class="daily-task">
+        <mat-card class="daily-task-header">
+          <mat-icon *ngIf="" class="material-icons-outlined" color="accent">pending</mat-icon>
+          <mat-card-subtitle *ngIf="">0/1 Günlük Görev</mat-card-subtitle>
+          <mat-icon class="material-icons-outlined" style="color:#0f9d58 ;">check</mat-icon>
+          <mat-card-title>Günlük Görev Tamamlandı</mat-card-title>
 
+        </mat-card>
+
+        <mat-card class="calendar">
+          <app-calendar></app-calendar>
+        </mat-card>
+
+        <mat-card class="weekly">
+          <div class="weekly-row">
+            <mat-card-subtitle>Pzt.</mat-card-subtitle>
+            <div class="weekly-rate"></div>
+          </div>
+          <div class="weekly-row">
+            <mat-card-subtitle>Pzt.</mat-card-subtitle>
+            <div class="weekly-rate"></div>
+          </div>
+
+        </mat-card>
+
+      </div>
     </div>
   </div>
 
