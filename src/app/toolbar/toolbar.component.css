@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined");
+
 span{
   margin-left: 20px;
   font-weight: 500;
@@ -13,7 +15,52 @@ button{
 }
 
 mat-toolbar{
-  background-color: white;
+  background-color: transparent;
   position: fixed;
   z-index:10;
+  height: 100vh;
+  width: 70px;
+  border-right: 2px solid #c7cdd8;
+}
+
+.mat-toolbar-single-row{
+  flex-direction: column;
+  padding: 16px;
+  justify-content: space-between;
+}
+
+.logo a{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.logo img{
+  width: 100%;
+}
+
+.material-icons-round{
+  font-size: 22px;
+  color: #a8afbd;
+  overflow: initial;
+  margin-left: 0px;
+}
+
+.toolbar-buttons{
+  display: flex;
+  flex-direction: column;
+  margin-top: -90px;
+}
+
+.toolbar-buttons button{
+  margin: 8px 0px;
+}
+
+.button-active{
+  background-color: white;
+  border-radius: 10px;
+}
+
+.button-active .material-icons-round{
+  color: #8833ff;
 }

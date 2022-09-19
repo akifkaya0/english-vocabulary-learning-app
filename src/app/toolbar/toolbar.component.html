@@ -1,9 +1,36 @@
 <mat-toolbar>
-  <a [routerLink]="'/studySets'" style="text-decoration: none;"><span><i>English Vocabulary Learning App</i></span></a>
+  <div class="logo">
+    <a [routerLink]="'/'"><img src="../../assets/logo.png"></a>
+  </div>
 
-  <span class="example-spacer"></span>
+  <div class="toolbar-buttons">
 
-  <button mat-raised-button color="primary" [routerLink]="'/createSet'">
+    <button mat-icon-button [routerLink]="'/'" routerLinkActive="button-active" [routerLinkActiveOptions]="{exact:true}">
+      <span class="material-icons-round">
+        home
+      </span>
+    </button>
+    <button mat-icon-button [routerLink]="'/'" routerLinkActive="button-active"[routerLinkActiveOptions]="{exact:true}">
+      <span class="material-icons-round">
+        bar_chart
+      </span>
+    </button>
+    <button mat-icon-button [routerLink]="'/'" routerLinkActive="button-active"[routerLinkActiveOptions]="{exact:true}">
+      <span class="material-icons-round">
+        task_alt
+      </span>
+    </button>
+    <button mat-icon-button [routerLink]="['/studySets']" routerLinkActive="button-active"[routerLinkActiveOptions]="{exact:true}">
+      <span class="material-icons-round">
+        view_module
+      </span>
+    </button>
+
+  </div>
+
+  <div></div>
+
+  <!-- <button mat-raised-button color="primary" [routerLink]="'/createSet'">
     Çalışma Seti Oluştur
-  </button>
+  </button> -->
 </mat-toolbar>
