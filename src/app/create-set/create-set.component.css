@@ -1,9 +1,9 @@
 mat-form-field{
-  width: 400px;
+  width: 350px;
 }
 
 mat-card-header{
-  padding: 0px 0px 10px 0px;
+  padding-top: 10px ;
 }
 
 mat-card-content{
@@ -13,5 +13,19 @@ mat-card-content{
 mat-card-subtitle{
   padding: 20px 0px 0px 20px;
 }
+a{
+  text-decoration: none;
+}
 
+.header{
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+}
+
+.header h2 {
+  margin-top: -40px;
+  align-self: center;
+
+}
 

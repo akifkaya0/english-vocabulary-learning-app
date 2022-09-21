@@ -1,7 +1,7 @@
 <div class="header">
   <mat-card-subtitle>
     <a [routerLink]="'/set/' + set?.id">
-      <b>&#60;  Çalışma Setine Geri Dön</b>
+      <b>&#60; Çalışma Setine Geri Dön</b>
     </a>
 
   </mat-card-subtitle>
@@ -12,11 +12,14 @@
       <mat-icon>undo</mat-icon>
     </button>
 
-    <button (click)="undoRedoHandler(1)" [disabled]="wordHistoryIndex >= wordHistory.length-1" color="primary" mat-mini-fab>
+    <button (click)="undoRedoHandler(1)" [disabled]="wordHistoryIndex >= wordHistory.length-1" color="primary"
+      mat-mini-fab>
       <mat-icon>redo</mat-icon>
     </button>
 
-    <button (click)="submitWord()" mat-raised-button style="color:#0f9d58 ;"><mat-icon style="font-size: 24px;">save</mat-icon> Kaydet</button>
+    <button (click)="submitWord()" mat-raised-button style="color:#0f9d58 ;">
+      <mat-icon style="font-size: 24px;">save</mat-icon> Kaydet
+    </button>
 
   </div>
 </div>
@@ -81,4 +84,3 @@
 
 
 </mat-card>
-

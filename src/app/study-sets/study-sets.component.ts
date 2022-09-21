@@ -16,33 +16,11 @@ export class StudySetsComponent implements OnInit {
   constructor(private setService: StudySetService, private taskService: DailyRecordService) { }
 
   sets: StudySet[] = [];
-  dailyRecord: DailyRecord | undefined;
+
 
   ngOnInit(): void {
 
-
-
     this.setService.getStudySets().subscribe(res => this.sets = res)
-    this.taskService.getDailyRecords().subscribe(res => {
-
-      const record = res.find(element => element.date == new Date().toLocaleDateString())
-      if (record)
-        this.dailyRecord = record
-      else {
-        this.dailyRecord = {
-          id : uuid.v4().substring(0, 5),
-          date: new Date().toLocaleDateString(),
-          tasks: [],
-          solvedSets: []
-        }
-        this.taskService.addDailyRecord(this.dailyRecord).subscribe()
-
-      }
-
-    }
-
-
-
 
   }
 

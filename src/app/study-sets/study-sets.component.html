@@ -5,14 +5,19 @@
   <div style="display: flex; flex-direction: column;">
 
     <div class="filter">
+     <div class="filter-left">
+      <button class="add-set" mat-raised-button color="primary" [routerLink]="'/createSet'">
+        Add New Set
+      </button>
       <mat-form-field appearance="outline">
         <mat-icon matPrefix>search</mat-icon>
         <mat-label>Search</mat-label>
         <input type="search" matInput id="search-input">
-        <button matSuffix mat-button>
+        <button class="arrow" matSuffix mat-button>
           <mat-icon>east</mat-icon>
         </button>
       </mat-form-field>
+     </div>
 
       <mat-card class="daily-task-header">
         <mat-icon *ngIf="" class="material-icons-outlined" color="accent">pending</mat-icon>
