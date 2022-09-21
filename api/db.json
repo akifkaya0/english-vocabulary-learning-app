@@ -136,14 +136,284 @@
           "falseAnswer": 0
         }
       ]
+    },
+    {
+      "id": "e3b89",
+      "title": "asd",
+      "testValue": 0,
+      "words": [
+        {
+          "id": "608ce",
+          "english": "",
+          "turkish": {
+            "first": "",
+            "second": ""
+          },
+          "description": "",
+          "sentences": [
+            {
+              "english": "",
+              "description": ""
+            },
+            {
+              "english": "",
+              "description": ""
+            },
+            {
+              "english": "",
+              "description": ""
+            }
+          ],
+          "rating": 0,
+          "trueAnswer": 0,
+          "falseAnswer": 0
+        }
+      ]
+    },
+    {
+      "id": "7e0a6",
+      "title": "asdfff",
+      "testValue": 0,
+      "words": [
+        {
+          "id": "f7661",
+          "english": "",
+          "turkish": {
+            "first": "",
+            "second": ""
+          },
+          "description": "",
+          "sentences": [
+            {
+              "english": "",
+              "description": ""
+            },
+            {
+              "english": "",
+              "description": ""
+            },
+            {
+              "english": "",
+              "description": ""
+            }
+          ],
+          "rating": 0,
+          "trueAnswer": 0,
+          "falseAnswer": 0
+        }
+      ]
     }
   ],
   "dailyRecord": [
     {
-      "id": "0a939",
-      "date": "16.09.2022",
-      "tasks": [],
-      "solvedSets": []
+      "id": "b732b",
+      "name": "9-2022",
+      "days": [
+        {
+          "id": "16c0f",
+          "date": "01.09.2022",
+          "tasks": [],
+          "solvedSets": []
+        },
+        {
+          "id": "dc778",
+          "date": "02.09.2022",
+          "tasks": [],
+          "solvedSets": []
+        },
+        {
+          "id": "7e455",
+          "date": "03.09.2022",
+          "tasks": [],
+          "solvedSets": []
+        },
+        {
+          "id": "0fb5c",
+          "date": "04.09.2022",
+          "tasks": [],
+          "solvedSets": []
+        },
+        {
+          "id": "d8105",
+          "date": "05.09.2022",
+          "tasks": [],
+          "solvedSets": []
+        },
+        {
+          "id": "c01bc",
+          "date": "06.09.2022",
+          "tasks": [],
+          "solvedSets": []
+        },
+        {
+          "id": "bbbb7",
+          "date": "07.09.2022",
+          "tasks": [],
+          "solvedSets": []
+        },
+        {
+          "id": "b2fe1",
+          "date": "08.09.2022",
+          "tasks": [],
+          "solvedSets": []
+        },
+        {
+          "id": "f12f5",
+          "date": "09.09.2022",
+          "tasks": [],
+          "solvedSets": []
+        },
+        {
+          "id": "b33e5",
+          "date": "10.09.2022",
+          "tasks": [],
+          "solvedSets": []
+        },
+        {
+          "id": "37d6e",
+          "date": "11.09.2022",
+          "tasks": [],
+          "solvedSets": []
+        },
+        {
+          "id": "33a04",
+          "date": "12.09.2022",
+          "tasks": [],
+          "solvedSets": []
+        },
+        {
+          "id": "b4fbd",
+          "date": "13.09.2022",
+          "tasks": [],
+          "solvedSets": []
+        },
+        {
+          "id": "4df45",
+          "date": "14.09.2022",
+          "tasks": [],
+          "solvedSets": []
+        },
+        {
+          "id": "ab3fd",
+          "date": "15.09.2022",
+          "tasks": [],
+          "solvedSets": []
+        },
+        {
+          "id": "b37fe",
+          "date": "16.09.2022",
+          "tasks": [],
+          "solvedSets": []
+        },
+        {
+          "id": "2f844",
+          "date": "17.09.2022",
+          "tasks": [],
+          "solvedSets": []
+        },
+        {
+          "id": "fec3a",
+          "date": "18.09.2022",
+          "tasks": [],
+          "solvedSets": []
+        },
+        {
+          "id": "a6721",
+          "date": "19.09.2022",
+          "tasks": [],
+          "solvedSets": []
+        },
+        {
+          "id": "6e693",
+          "date": "20.09.2022",
+          "tasks": [],
+          "solvedSets": []
+        },
+        {
+          "id": "1ee63",
+          "date": "21.09.2022",
+          "tasks": [
+            {
+              "id": "443df",
+              "title": "asd",
+              "isDone": false
+            }
+          ],
+          "solvedSets": []
+        },
+        {
+          "id": "72875",
+          "date": "22.09.2022",
+          "tasks": [
+            {
+              "id": "33c50",
+              "title": "asd",
+              "isDone": false
+            }
+          ],
+          "solvedSets": []
+        },
+        {
+          "id": "8703b",
+          "date": "23.09.2022",
+          "tasks": [],
+          "solvedSets": []
+        },
+        {
+          "id": "e5ac9",
+          "date": "24.09.2022",
+          "tasks": [
+            {
+              "id": "1364a",
+              "title": "asd",
+              "isDone": false
+            }
+          ],
+          "solvedSets": []
+        },
+        {
+          "id": "a6631",
+          "date": "25.09.2022",
+          "tasks": [],
+          "solvedSets": []
+        },
+        {
+          "id": "dfa2a",
+          "date": "26.09.2022",
+          "tasks": [],
+          "solvedSets": []
+        },
+        {
+          "id": "34149",
+          "date": "27.09.2022",
+          "tasks": [
+            {
+              "id": "e6f96",
+              "title": "asd",
+              "isDone": false
+            }
+          ],
+          "solvedSets": []
+        },
+        {
+          "id": "70381",
+          "date": "28.09.2022",
+          "tasks": [],
+          "solvedSets": []
+        },
+        {
+          "id": "112b5",
+          "date": "29.09.2022",
+          "tasks": [],
+          "solvedSets": []
+        },
+        {
+          "id": "47d92",
+          "date": "30.09.2022",
+          "tasks": [],
+          "solvedSets": []
+        }
+      ]
     }
   ]
 }

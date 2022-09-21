@@ -19,7 +19,7 @@ throw new Error('Method not implemented.');
   constructor(private service: DailyRecordService) { }
 
   records: DailyRecord[] | undefined;
-  now: Date = new Date();;
+  now: Date = new Date();
   month: Date[] = [];
   monthNames: string[] = ["January", "February", "March", "April", "May", "June",
     "July", "August", "September", "October", "November", "December"];
@@ -30,10 +30,9 @@ throw new Error('Method not implemented.');
 
   ngOnInit(): void {
 
-    this.service.getDailyRecords().subscribe(res => {
+    this.service.getMonthlyRecords().subscribe(res => {
 
-      this.records = res;
-      console.log(this.records)
+      this.records = res.find(el => el.name == (this.now.getMonth()+1) + "-" + this.now.getFullYear())?.days;
       this.month = this.getAllDaysInMonth(this.now.getFullYear(), this.now.getMonth())
 
     });
@@ -43,7 +42,6 @@ throw new Error('Method not implemented.');
       if (res.month != null || res.month != undefined)
         this.month = this.getAllDaysInMonth(2022, res.month)
     })
-
 
   }
 

@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { Word } from '../entitiy/word';
 import { DailyRecordService } from '../service/daily-record.service';
 import { DailyRecord } from '../entitiy/daily-record';
+import { MonthlyRecord } from '../entitiy/monthly-record';
 
 @Component({
   selector: 'app-create-set',
@@ -19,6 +20,8 @@ export class CreateSetComponent implements OnInit {
   }
 
   setTitle: string = "";
+  now: Date = new Date();
+  monthlyRecord: MonthlyRecord | undefined;
 
   createSet(wordArray: Word[]) {
 
@@ -28,50 +31,28 @@ export class CreateSetComponent implements OnInit {
       "testValue": 0,
       "words": wordArray
     }).subscribe(res => {
-      this.taskService.getDailyRecords().subscribe(res => {
-        debugger
-        let dailyRecord: DailyRecord | undefined
-        for (let index = 1; index <= 7; index++) {
 
-          if (index == 1 || index == 2 || index == 4 || index == 5 || index == 7) {
-            var date = new Date()
-            date.setDate(date.getDate() + index - 1)
+      this.taskService.getMonthlyRecords().subscribe(res => {
 
-            var aa  : string= date.toLocaleDateString()
-            dailyRecord = res.find(record => {
-              return record.date === aa
-            })
+        this.monthlyRecord = res.find(el => el.name == (this.now.getMonth()+1) + "-" + this.now.getFullYear())
 
-            if (dailyRecord == undefined){
-              dailyRecord = {
-                id: uuid.v4().substring(0, 5),
-                date: date.toLocaleDateString(),
-                tasks: [{
-                  id: uuid.v4().substring(0, 5),
-                  title: this.setTitle,
-                  isDone: true
-                }],
-                solvedSets: []
-              }
-              this.taskService.addDailyRecord(dailyRecord).subscribe()
-              continue
-            }
+        for (let counter = 0; counter < 7; counter++)  {
 
-            dailyRecord.tasks.push({
+          if (counter == 0 || counter == 1 || counter == 3 || counter == 6) {
+
+            this.monthlyRecord?.days[this.now.getDate() +counter-1].tasks.push({
               id: uuid.v4().substring(0, 5),
               title: this.setTitle,
-              isDone: true
+              isDone: false
             })
-
-            this.taskService.updateDailyRecord(dailyRecord).subscribe()
 
           }
 
+        };
 
+        if(this.monthlyRecord) this.taskService.updateMonthlyRecord(this.monthlyRecord).subscribe()
 
-        }
-
-      })
+      });
 
       this.router.navigateByUrl("/set/" + res.id)
     });
