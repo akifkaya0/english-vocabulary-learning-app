@@ -9,6 +9,12 @@ import { DailyRecordService } from 'src/app/service/daily-record.service';
   styleUrls: ['./calendar.component.css']
 })
 export class CalendarComponent implements OnInit {
+getNextDate(_t43: number): any {
+throw new Error('Method not implemented.');
+}
+getAfterDate(_t43: number): any {
+throw new Error('Method not implemented.');
+}
 
   constructor(private service: DailyRecordService) { }
 
@@ -27,6 +33,7 @@ export class CalendarComponent implements OnInit {
     this.service.getDailyRecords().subscribe(res => {
 
       this.records = res;
+      console.log(this.records)
       this.month = this.getAllDaysInMonth(this.now.getFullYear(), this.now.getMonth())
 
     });
@@ -57,15 +64,35 @@ export class CalendarComponent implements OnInit {
 
   isTasksDone(day: Date):string {
 
+    const today = new Date();
+
     let record = this.records?.find(element => {return element.date == day.toLocaleDateString()})
 
-    if(record == undefined) return "white"
+    if(record == undefined || record.tasks.length == 0) return "white"
 
-    return record?.tasks.find(element => element.isDone) != undefined ? "green" : "yellow"
+    if(record?.tasks.find(element => !element.isDone) == undefined) return "green"
+
+    if(day.getMonth() < today.getMonth()){
+
+      return "red"
+
+    }else{
+
+      if(day.getMonth() == today.getMonth() && day.getDate() < today.getDate()) return "red"
+
+      return "yellow"
+
+    }
+
+
 
   }
 
-
-
-
+  getIsDateTasks(day:Date , i : number):boolean{
+    var date = new Date()
+    date.setDate(day.getDate() + i)
+    let record = this.records?.find(element => {return element.date == date.toLocaleDateString()})
+    if(record == undefined || record.tasks.length == 0) return true
+    return false
+  }
 }

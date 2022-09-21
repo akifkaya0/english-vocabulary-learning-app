@@ -14,6 +14,14 @@
         </button>
       </mat-form-field>
 
+      <mat-card class="daily-task-header">
+        <mat-icon *ngIf="" class="material-icons-outlined" color="accent">pending</mat-icon>
+        <mat-card-subtitle *ngIf="">0/1 Günlük Görev</mat-card-subtitle>
+        <mat-icon class="material-icons-outlined" style="color:#0f9d58 ;">check</mat-icon>
+        <mat-card-title>Günlük Görev Tamamlandı</mat-card-title>
+
+      </mat-card>
+
     </div>
     <div style="display: flex;">
       <div class="cards">
@@ -34,28 +42,9 @@
       </div>
 
       <div class="daily-task">
-        <mat-card class="daily-task-header">
-          <mat-icon *ngIf="" class="material-icons-outlined" color="accent">pending</mat-icon>
-          <mat-card-subtitle *ngIf="">0/1 Günlük Görev</mat-card-subtitle>
-          <mat-icon class="material-icons-outlined" style="color:#0f9d58 ;">check</mat-icon>
-          <mat-card-title>Günlük Görev Tamamlandı</mat-card-title>
-
-        </mat-card>
 
         <mat-card class="calendar">
           <app-calendar></app-calendar>
-        </mat-card>
-
-        <mat-card class="weekly">
-          <div class="weekly-row">
-            <mat-card-subtitle>Pzt.</mat-card-subtitle>
-            <div class="weekly-rate"></div>
-          </div>
-          <div class="weekly-row">
-            <mat-card-subtitle>Pzt.</mat-card-subtitle>
-            <div class="weekly-rate"></div>
-          </div>
-
         </mat-card>
 
       </div>

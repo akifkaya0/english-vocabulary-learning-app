@@ -11,6 +11,11 @@ h2{
   font: 600 20px/32px 'Roboto Condensed', sans-serif;
 }
 
+.filter{
+  display: flex;
+  justify-content: space-between;
+}
+
 .filter button{
   min-width: 36px;
   padding: 0px;
@@ -56,15 +61,18 @@ a{
 .daily-task-header{
   display: flex;
   align-items: center;
+  width: 280px;
+  height: 10px;
+  border-radius: 20px;
 }
 
 .daily-task-header mat-card-title{
-  margin: 0px 0px 0px 10px;
+  margin: 0px;
   font-size: 16px;
 }
 
 .material-icons-outlined{
-  font-size: 40px;
+  font-size: 30px;
   overflow: initial;
 }
 
@@ -74,7 +82,8 @@ mat-icon{
 }
 
 .calendar{
-  padding: 0px;
+  border-radius: 10px;
+  padding: 3px;
 }
 
 
@@ -101,6 +110,7 @@ mat-icon{
 
 ::ng-deep .mat-form-field-flex > .mat-form-field-infix { padding: 0.4em 0px !important;}
 ::ng-deep .mat-form-field-label-wrapper { top: -1.3em; }
+::ng-deep .mat-form-field-wrapper { padding-bottom: 0.8em ; }
 
 ::ng-deep .mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label {
     transform: translateY(-1.1em) scale(.75);

@@ -1,12 +1,12 @@
 .calendar {
   --side-padding: 20px;
   --border-radius: 34px;
-  --accent-br: 15px;
+  --accent-br: 10px;
   width: 100%;
 }
 .calendar select {
   background-color: #f3f4f6;
-  padding: 15px 20px;
+  padding: 10px 20px;
 }
 .calendar__opts, .calendar__buttons {
   background-color: #fff;
@@ -75,6 +75,10 @@
 }
 .calendar__date--yellow::before {
   background-color: #f6ffa2;
+  border-radius: 0px;
+}
+.calendar__date--red::before {
+  background-color: #ffa2a2;
   border-radius: 0px;
 }
 .calendar__date--first-date::before {
@@ -158,7 +162,7 @@ select,
 button {
   font-family: inherit;
   font-weight: 700;
-  font-size: 1.02rem;
+  font-size: 14px;
   border-radius: 20px;
   outline: none;
   border: 0;
@@ -173,4 +177,14 @@ select {
   background-size: 24px;
   background-repeat: no-repeat;
   background-position: calc(100% - var(--side-padding)) center;
+}
+
+
+mat-card-header{
+  margin-top: 25px;
+}
+
+mat-card-subtitle{
+  font-weight: 600;
+  margin-bottom: 5px;
 }

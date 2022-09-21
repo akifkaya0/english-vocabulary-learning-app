@@ -1,4 +1,7 @@
 <div class="calendar">
+  <mat-card-header>
+    <mat-card-subtitle>Aylık Görev Çizelgesi</mat-card-subtitle>
+  </mat-card-header>
   <form [formGroup]="selectedMonth">
     <div class="calendar__opts">
 
@@ -33,7 +36,13 @@
       <div class="calendar__date calendar__date--grey"><span>30</span></div>
 
       <div class="calendar__date"
-        [ngClass]="{'calendar__date--green' : isTasksDone(day)=='green', 'calendar__date--yellow' :  isTasksDone(day)=='yellow' ,'calendar__date--range-start' : day.getDate() == now.getDate() && day.getMonth() == now.getMonth()}"
+        [ngClass]="{
+          'calendar__date--green' : isTasksDone(day)=='green',
+          'calendar__date--yellow' :  isTasksDone(day)=='yellow' ,
+          'calendar__date--red' :  isTasksDone(day)=='red' ,
+          'calendar__date--range-start' : day.getDate() == now.getDate() && day.getMonth() == now.getMonth(),
+          'calendar__date--first-date' : getIsDateTasks(day , -1),
+          'calendar__date--last-date' : getIsDateTasks(day,+1)}"
         *ngFor="let day of month">
         <span>{{day.getDate()}}</span>
       </div>
