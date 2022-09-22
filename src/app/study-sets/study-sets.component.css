@@ -2,7 +2,7 @@
 
 .cards{
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   width: 70%;
   padding: 10px;
 }
@@ -35,7 +35,6 @@
 }
 
 .card{
-  width: 100%;
   margin: 10px;
 }
 
@@ -110,8 +109,6 @@ mat-icon{
 .chart{
   width: 50%;
 }
-
-
 
 
 

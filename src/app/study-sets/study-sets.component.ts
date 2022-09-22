@@ -5,6 +5,7 @@ import { Word } from '../entitiy/word';
 import { DailyRecordService } from '../service/daily-record.service';
 import { StudySetService } from '../service/study-set.service';
 import * as uuid from 'uuid';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-study-sets',
@@ -16,11 +17,12 @@ export class StudySetsComponent implements OnInit {
   constructor(private setService: StudySetService, private taskService: DailyRecordService) { }
 
   sets: StudySet[] = [];
-
+  viewSet : StudySet[] = [];
+  search : string = "";
 
   ngOnInit(): void {
 
-    this.setService.getStudySets().subscribe(res => this.sets = res)
+    this.setService.getStudySets().subscribe(res => {this.sets = res ; this.viewSet = res} )
 
   }
 

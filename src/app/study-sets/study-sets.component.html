@@ -9,14 +9,13 @@
       <button class="add-set" mat-raised-button color="primary" [routerLink]="'/createSet'">
         Add New Set
       </button>
+
       <mat-form-field appearance="outline">
         <mat-icon matPrefix>search</mat-icon>
         <mat-label>Search</mat-label>
-        <input type="search" matInput id="search-input">
-        <button class="arrow" matSuffix mat-button>
-          <mat-icon>east</mat-icon>
-        </button>
+        <input type="search" matInput id="search-input" [(ngModel)]="search">
       </mat-form-field>
+
      </div>
 
       <mat-card class="daily-task-header">
@@ -30,7 +29,7 @@
     </div>
     <div style="display: flex;">
       <div class="cards">
-        <div class="card" *ngFor="let set of sets">
+        <div class="card" *ngFor="let set of sets | searchSet : search">
           <a [routerLink]="'/set/' + set.id">
             <mat-card>
               <mat-card-header>

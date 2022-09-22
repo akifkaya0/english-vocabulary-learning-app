@@ -26,6 +26,7 @@ import {MatTabsModule} from '@angular/material/tabs';
 import { MouseEnterDtDirective } from './directives/mouse-enter-dt.directive';
 import { LearnComponent } from './learn/learn.component';
 import { CalendarComponent } from './study-sets/calendar/calendar.component';
+import { SearchSetPipe } from './pipes/search-set.pipe';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,8 @@ import { CalendarComponent } from './study-sets/calendar/calendar.component';
     MouseEnterDtDirective,
     LearnComponent,
     CalendarComponent
+    CalendarComponent,
+    SearchSetPipe,
   ],
   imports: [
     BrowserModule,
@@ -57,7 +60,7 @@ import { CalendarComponent } from './study-sets/calendar/calendar.component';
     MatExpansionModule,
     ReactiveFormsModule,
     MatDialogModule,
-    MatTabsModule,
+    MatTabsModule
   ],
   providers: [],
   bootstrap: [AppComponent],
