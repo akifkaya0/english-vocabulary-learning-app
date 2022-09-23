@@ -30,9 +30,9 @@ throw new Error('Method not implemented.');
 
   ngOnInit(): void {
 
-    this.service.getMonthlyRecords().subscribe(res => {
+    this.service.getAllRecords().subscribe(res => {
 
-      this.records = res.find(el => el.name == (this.now.getMonth()+1) + "-" + this.now.getFullYear())?.days;
+      this.records = res.days
       this.month = this.getAllDaysInMonth(this.now.getFullYear(), this.now.getMonth())
 
     });

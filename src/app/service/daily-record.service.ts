@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { DailyRecord } from '../entitiy/daily-record';
-import { MonthlyRecord } from '../entitiy/monthly-record';
+
 import { BaseServiceService } from './base-service.service';
 
 @Injectable({
@@ -13,21 +13,12 @@ export class DailyRecordService extends BaseServiceService {
 		super(base.http);
 	}
 
-
-  public getMonthlyRecords() : Observable<MonthlyRecord[]>{
-    return this.getReq("/dailyRecord");
+  public getAllRecords() : Observable<{id: string, days : DailyRecord[]}>{
+    return this.getReq("/dailyRecords");
   }
 
-  public addMonthlyRecord(month : MonthlyRecord){
-    return this.postReq("/dailyRecord" , month);
+  public updateAllRecords(month : DailyRecord[]){
+    return this.putReq("/dailyRecords", {id : "111" , days :month})
   }
-
-  public updateMonthlyRecord(month : MonthlyRecord){
-    return this.putReq("/dailyRecord/" + month.id , month)
-  }
-
-  // public updateDailyRecord(record : DailyRecord){
-  //   return this.putReq(("/dailyRecord/" + record.id) , record)
-  // }
 
 }
